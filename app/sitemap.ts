@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://institutbeautedefemme.fr'
+  const baseUrl = 'https://www.institutbeautedefemme.fr'
   const lastModified = new Date()
 
   // Pages principales
