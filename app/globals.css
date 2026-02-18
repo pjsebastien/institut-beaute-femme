@@ -1,0 +1,477 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-inter text-charbon bg-beige-creme antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair font-semibold text-charbon;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl leading-snug;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  p {
+    @apply text-base md:text-lg leading-relaxed text-charbon/80;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-inter font-medium text-base transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-rose-fonce text-white hover:bg-or-rose focus:ring-rose-fonce shadow-soft hover:shadow-hover;
+  }
+
+  .btn-secondary {
+    @apply btn bg-white text-charbon border-2 border-rose-poudre hover:bg-rose-pale focus:ring-rose-poudre;
+  }
+
+  .btn-outline {
+    @apply btn bg-transparent text-rose-fonce border-2 border-rose-fonce hover:bg-rose-fonce hover:text-white focus:ring-rose-fonce;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-charbon hover:bg-rose-pale focus:ring-rose-poudre;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-card overflow-hidden transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-hover hover:-translate-y-1;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 rounded-xl border border-nude-rose/50 bg-white text-charbon placeholder-charbon/40 focus:outline-none focus:ring-2 focus:ring-rose-poudre focus:border-transparent transition-all duration-200;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-charbon mb-2;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-rose {
+    @apply badge bg-rose-pale text-rose-fonce;
+  }
+
+  .badge-or {
+    @apply badge bg-or-rose/10 text-or-rose;
+  }
+
+  .link-underline {
+    @apply relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-rose-fonce after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  .prose-custom {
+    @apply max-w-none text-lg;
+  }
+
+  .prose-custom h2,
+  .prose-custom h3,
+  .prose-custom h4 {
+    @apply font-playfair text-charbon;
+  }
+
+  .prose-custom p {
+    @apply text-charbon/80 leading-relaxed mb-4;
+  }
+
+  .prose-custom a {
+    @apply text-rose-fonce no-underline hover:underline;
+  }
+
+  .prose-custom strong {
+    @apply text-charbon font-semibold;
+  }
+
+  .prose-custom ul {
+    @apply list-disc pl-6 mb-4 space-y-2;
+  }
+
+  .prose-custom ol {
+    @apply list-decimal pl-6 mb-4 space-y-2;
+  }
+
+  .prose-custom li {
+    @apply text-charbon/80;
+  }
+
+  .prose-custom blockquote {
+    @apply border-l-4 border-rose-poudre pl-6 italic text-charbon/70 my-6;
+  }
+
+  .prose-custom blockquote cite {
+    @apply block mt-2 text-sm not-italic text-charbon/60;
+  }
+
+  .prose-custom img {
+    @apply rounded-2xl shadow-card my-6;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-rose-fonce to-or-rose bg-clip-text text-transparent;
+  }
+
+  .divider {
+    @apply w-full h-px bg-gradient-to-r from-transparent via-nude-rose to-transparent;
+  }
+
+  .overlay-gradient {
+    @apply bg-gradient-to-t from-charbon/60 to-transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Text shadow for better readability on dark backgrounds - Professional version */
+  .text-shadow-hero {
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.8),
+      0 2px 4px rgba(0, 0, 0, 0.6),
+      0 4px 8px rgba(0, 0, 0, 0.4),
+      0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .text-shadow-sm {
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.6),
+      0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-shadow-lg {
+    text-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.9),
+      0 4px 8px rgba(0, 0, 0, 0.7),
+      0 8px 16px rgba(0, 0, 0, 0.5),
+      0 16px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Hero overlay for guaranteed text visibility */
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.4) 40%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  }
+}
+
+/* Animations personnalisées */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(232, 180, 184, 0.3), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out forwards;
+}
+
+/* Styles pour le contenu riche */
+.rich-content h2 {
+  @apply mt-12 mb-6 pb-3 border-b border-nude-rose/30;
+}
+
+.rich-content h3 {
+  @apply mt-8 mb-4;
+}
+
+.rich-content p {
+  @apply mb-6;
+}
+
+.rich-content ul, .rich-content ol {
+  @apply mb-6 space-y-2;
+}
+
+.rich-content li {
+  @apply pl-2;
+}
+
+.rich-content img {
+  @apply my-8;
+}
+
+.rich-content blockquote {
+  @apply my-8 p-6 bg-rose-pale/30 rounded-2xl;
+}
+
+/* FAQ Accordion styles */
+.faq-item {
+  @apply border-b border-nude-rose/30 last:border-b-0;
+}
+
+.faq-question {
+  @apply flex items-center justify-between w-full py-5 text-left font-semibold text-charbon hover:text-rose-fonce transition-colors;
+}
+
+.faq-answer {
+  @apply pb-5 text-charbon/80 leading-relaxed;
+}
+
+/* Table of contents styles */
+.toc-link {
+  @apply block py-2 pl-4 border-l-2 border-transparent text-charbon/60 hover:text-rose-fonce hover:border-rose-poudre transition-all;
+}
+
+.toc-link.active {
+  @apply text-rose-fonce border-rose-fonce font-medium;
+}
+
+/* Image gallery styles */
+.gallery-grid {
+  @apply grid grid-cols-2 md:grid-cols-3 gap-4;
+}
+
+.gallery-item {
+  @apply relative aspect-square overflow-hidden rounded-2xl cursor-pointer;
+}
+
+.gallery-item img {
+  @apply w-full h-full object-cover transition-transform duration-500;
+}
+
+.gallery-item:hover img {
+  @apply scale-110;
+}
+
+/* Before/After slider styles */
+.before-after-container {
+  @apply relative overflow-hidden rounded-2xl;
+}
+
+.before-after-slider {
+  @apply absolute inset-y-0 w-1 bg-white shadow-lg cursor-ew-resize z-10;
+}
+
+.before-after-handle {
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center;
+}
+
+/* Product card styles */
+.product-card {
+  @apply card-hover;
+}
+
+.product-card .product-image {
+  @apply relative aspect-square overflow-hidden;
+}
+
+.product-card .product-image img {
+  @apply w-full h-full object-cover transition-transform duration-500 group-hover:scale-105;
+}
+
+.product-card .product-overlay {
+  @apply absolute inset-0 bg-charbon/0 group-hover:bg-charbon/10 transition-colors duration-300;
+}
+
+/* Cart drawer styles */
+.cart-drawer {
+  @apply fixed inset-y-0 right-0 w-full max-w-md bg-white shadow-2xl z-50 transform transition-transform duration-300;
+}
+
+.cart-drawer.open {
+  @apply translate-x-0;
+}
+
+.cart-drawer.closed {
+  @apply translate-x-full;
+}
+
+/* Navigation dropdown styles */
+.nav-dropdown {
+  @apply absolute top-full left-0 w-64 bg-white rounded-2xl shadow-hover py-4 opacity-0 invisible translate-y-2 transition-all duration-200;
+}
+
+.nav-item:hover .nav-dropdown {
+  @apply opacity-100 visible translate-y-0;
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+  @apply fixed inset-0 bg-white z-50 transform transition-transform duration-300;
+}
+
+.mobile-menu.open {
+  @apply translate-x-0;
+}
+
+.mobile-menu.closed {
+  @apply -translate-x-full;
+}
+
+/* Breadcrumb styles */
+.breadcrumb {
+  @apply flex items-center gap-2 text-sm text-charbon/60;
+}
+
+.breadcrumb-separator {
+  @apply text-nude-rose;
+}
+
+.breadcrumb-link {
+  @apply hover:text-rose-fonce transition-colors;
+}
+
+.breadcrumb-current {
+  @apply text-charbon font-medium;
+}
+
+/* Rating stars styles */
+.rating-stars {
+  @apply flex items-center gap-0.5;
+}
+
+.rating-star {
+  @apply w-4 h-4 text-or-rose;
+}
+
+.rating-star.empty {
+  @apply text-nude-rose/50;
+}
+
+/* Quantity selector styles */
+.quantity-selector {
+  @apply flex items-center border border-nude-rose rounded-xl overflow-hidden;
+}
+
+.quantity-btn {
+  @apply w-10 h-10 flex items-center justify-center text-charbon hover:bg-rose-pale transition-colors;
+}
+
+.quantity-input {
+  @apply w-14 h-10 text-center border-x border-nude-rose bg-white text-charbon font-medium;
+}
+
+/* Loading skeleton styles */
+.skeleton {
+  @apply animate-pulse bg-nude-rose/30 rounded;
+}
+
+.skeleton-text {
+  @apply skeleton h-4 w-full;
+}
+
+.skeleton-title {
+  @apply skeleton h-8 w-3/4;
+}
+
+.skeleton-image {
+  @apply skeleton aspect-square w-full;
+}
+
+/* Toast notification styles */
+.toast {
+  @apply fixed bottom-4 right-4 bg-white rounded-2xl shadow-hover p-4 flex items-center gap-3 z-50 animate-slide-up;
+}
+
+.toast-success {
+  @apply border-l-4 border-green-500;
+}
+
+.toast-error {
+  @apply border-l-4 border-red-500;
+}
+
+.toast-info {
+  @apply border-l-4 border-rose-fonce;
+}
